@@ -8,11 +8,7 @@ mod tests {
 
     #[test]
     fn copy() {
-        let a = Vector3 {
-            x: 1.0,
-            y: 2.0,
-            z: 3.0,
-        };
+        let a = Vector3::from_i32(1, 2, 3);
 
         let mut b = a;
 
@@ -23,136 +19,53 @@ mod tests {
 
     #[test]
     fn add() {
-        let a = Vector3 {
-            x: 3.0,
-            y: 2.0,
-            z: 1.0,
-        };
-        let b = Vector3 {
-            x: 2.0,
-            y: 3.0,
-            z: 4.0,
-        };
+        let a = Vector3::from_i32(3, 2, 1);
+        let b = Vector3::from_i32(2, 3, 4);
 
-        assert_eq!(
-            a + b,
-            Vector3 {
-                x: 5.0,
-                y: 5.0,
-                z: 5.0
-            }
-        );
+        assert_eq!(a + b, Vector3::from_i32(5, 5, 5));
     }
 
     #[test]
     fn sub() {
-        let a = Vector3 {
-            x: 3.0,
-            y: 2.0,
-            z: 1.0,
-        };
-        let b = Vector3 {
-            x: 2.0,
-            y: 3.0,
-            z: 4.0,
-        };
-
-        assert_eq!(
-            a - b,
-            Vector3 {
-                x: 1.0,
-                y: -1.0,
-                z: -3.0
-            }
-        );
+        let a = Vector3::from_i32(3, 2, 1);
+        let b = Vector3::from_i32(2, 3, 4);
+        assert_eq!(a - b, Vector3::from_i32(1, -1, -3));
     }
 
     #[test]
     fn mul() {
-        let a = Vector3 {
-            x: 3.0,
-            y: 2.0,
-            z: 1.0,
-        };
+        let a = Vector3::from_i32(3, 2, 1);
 
-        assert_eq!(
-            a * 5.0,
-            Vector3 {
-                x: 15.0,
-                y: 10.0,
-                z: 5.0
-            }
-        )
+        assert_eq!(a * 5.0, Vector3::from_i32(15, 10, 5))
     }
 
     #[test]
     fn div() {
-        let a = Vector3 {
-            x: 5.0,
-            y: 15.0,
-            z: 30.0,
-        };
-
-        assert_eq!(
-            a / 5.0,
-            Vector3 {
-                x: 1.0,
-                y: 3.0,
-                z: 6.0
-            }
-        )
+        let a = Vector3::from_i32(5, 15, 30);
+        assert_eq!(a / 5.0, Vector3::from_i32(1, 3, 6))
     }
 
     #[test]
     fn magnitude() {
-        let a = Vector3 {
-            x: 0.0,
-            y: 0.0,
-            z: 3.0,
-        };
+        let a = Vector3::from_i32(0, 0, 3);
 
         assert_eq!(a.magnitude(), 3.0);
     }
 
     #[test]
     fn dot() {
-        let a = Vector3 {
-            x: 1.0,
-            y: 2.0,
-            z: 3.0,
-        };
-
-        let b = Vector3 {
-            x: 1.0,
-            y: 2.0,
-            z: 3.0,
-        };
+        let a = Vector3::from_i32(1, 2, 3);
+        let b = Vector3::from_i32(1, 2, 3);
 
         assert_eq!(a.dot(&b), 14.0);
     }
 
     #[test]
     fn cross() {
-        let a = Vector3 {
-            x: 1.0,
-            y: 2.0,
-            z: 3.0,
-        };
+        let a = Vector3::from_i32(1, 2, 3);
+        let b = Vector3::from_i32(3, 2, 1);
 
-        let b = Vector3 {
-            x: 3.0,
-            y: 2.0,
-            z: 1.0,
-        };
-
-        assert_eq!(
-            a.cross(&b),
-            Vector3 {
-                x: -4.0,
-                y: 8.0,
-                z: -4.0
-            }
-        );
+        assert_eq!(a.cross(&b), Vector3::from_i32(-4, 8, -4));
     }
 
     #[test]
