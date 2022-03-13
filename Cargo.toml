@@ -6,6 +6,6 @@ license = "MIT"
 description = "A library for dealing with 3D mathematical vectors"
 repository = "https://github.com/DigitalCyan/vector3"
 keywords = ["maths", "vector"]
-categories = ["mathematics", "no-std"]
+categories = ["mathematics"]
 
 [dependencies]
