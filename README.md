@@ -16,10 +16,7 @@ cargo add vector
 ```
 
 ### If not using `cargo-edit`:
-Add this under your dependencies in `Cargo.toml`
-```
-vector3 = "1.1.0"
-```
+Go to this crate's crates.io page and look right
 
 ## Examples:
 ```rust
