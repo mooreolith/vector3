@@ -4,7 +4,7 @@ version = "1.1.0"
 edition = "2021"
 license = "MIT"
 repository = "https://github.com/DigitalCyan/vector"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+keywords = ["maths", "vector"]
+categories = ["mathematics", "no-std"]
 
 [dependencies]
