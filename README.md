@@ -1,10 +1,10 @@
-# vector
+# vector3
 
 ## What is it?
-`vector` is a rust library for dealing with 3D mathematical vectors.
+`vector3` is a rust library for dealing with 3D mathematical vectors.
 
 ## What does it do?
-`vector` allows for creation of three dimensional vectors as well as performing arithmetic operaitons on them, some of which are: addition, subtraction, multiplication, division of the magnitude, cross and dot prodcuts and normalizaton.
+`vector3` allows for creation of three dimensional vectors as well as performing arithmetic operaitons on them, some of which are: addition, subtraction, multiplication, division of the magnitude, cross and dot prodcuts and normalizaton.
 
 ## How do I get started?
 Make sure you have a project set up using `cargo` then:
@@ -18,7 +18,7 @@ cargo add vector
 ### If not using `cargo-edit`:
 Add this under your dependencies in `Cargo.toml`
 ```
-vector = "1.1.0"
+vector3 = "1.1.0"
 ```
 
 ## Examples:
