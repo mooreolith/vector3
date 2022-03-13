@@ -157,24 +157,24 @@ mod tests {
 
     #[test]
     fn angle() {
-        let a = Vector3::from_coords(1.0, 0.0, 0.0);
-        let b = Vector3::from_coords(0.0, 0.0, 1.0);
+        let a = Vector3::from_i32(1, 0, 0);
+        let b = Vector3::from_i32(0, 0, 1);
 
         assert_eq!(a.angle(b) * (180.0 / PI), 90.0);
     }
 
     #[test]
     fn angle_deg() {
-        let a = Vector3::from_coords(1.0, 0.0, 0.0);
-        let b = Vector3::from_coords(0.0, 0.0, 1.0);
+        let a = Vector3::from_i32(1, 0, 0);
+        let b = Vector3::from_i32(0, 0, 1);
 
         assert_eq!(a.angle_deg(b), 90.0);
     }
 
     #[test]
     fn normalize() {
-        let a = Vector3::from_coords(0.5, 0.0, 0.0);
+        let a = Vector3::new(0.5, 0.0, 0.0);
 
-        assert_eq!(a.normalize(), Vector3::from_coords(1.0, 0.0, 0.0));
+        assert_eq!(a.normalize(), Vector3::from_i32(1, 0, 0));
     }
 }

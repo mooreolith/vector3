@@ -11,7 +11,11 @@ pub struct Vector3 {
 }
 
 impl Vector3 {
-    pub fn new() -> Vector3 {
+    pub fn new(x: f64, y: f64, z: f64) -> Vector3 {
+        Vector3 { x, y, z }
+    }
+
+    pub fn zero() -> Vector3 {
         Vector3 {
             x: 0.0,
             y: 0.0,
@@ -19,8 +23,20 @@ impl Vector3 {
         }
     }
 
-    pub fn from_coords(x: f64, y: f64, z: f64) -> Vector3 {
-        Vector3 { x, y, z }
+    pub fn from_u32(x: u32, y: u32, z: u32) -> Vector3 {
+        Vector3 {
+            x: x.try_into().unwrap(),
+            y: y.try_into().unwrap(),
+            z: z.try_into().unwrap(),
+        }
+    }
+
+    pub fn from_i32(x: i32, y: i32, z: i32) -> Vector3 {
+        Vector3 {
+            x: x.try_into().unwrap(),
+            y: y.try_into().unwrap(),
+            z: z.try_into().unwrap(),
+        }
     }
 }
 
