@@ -3,7 +3,7 @@ use std::{
     ops::{Add, Div, Mul, Sub},
 };
 
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy)]
 pub struct Vector3 {
     pub x: f64,
     pub y: f64,
@@ -21,16 +21,6 @@ impl Vector3 {
 
     pub fn from_coords(x: f64, y: f64, z: f64) -> Vector3 {
         Vector3 { x, y, z }
-    }
-}
-
-impl Clone for Vector3 {
-    fn clone(&self) -> Self {
-        Vector3 {
-            x: self.x,
-            y: self.y,
-            z: self.z,
-        }
     }
 }
 

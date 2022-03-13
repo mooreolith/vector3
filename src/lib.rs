@@ -7,6 +7,21 @@ mod tests {
     use crate::vector3::Vector3;
 
     #[test]
+    fn copy() {
+        let a = Vector3 {
+            x: 1.0,
+            y: 2.0,
+            z: 3.0,
+        };
+
+        let mut b = a;
+
+        b.x += 1.0;
+
+        assert!(a != b);
+    }
+
+    #[test]
     fn add() {
         let a = Vector3 {
             x: 3.0,
