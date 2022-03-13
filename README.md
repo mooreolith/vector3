@@ -1,7 +1,7 @@
 # vector
 
 ## What is it?
-`vector` is a rust library for creation and manipulation of mathematical vectors.
+`vector` is a rust library for dealing with 3D mathematical vectors.
 
 ## What does it do?
 `vector` allows for creation of three dimensional vectors as well as performing arithmetic operaitons on them, some of which are: addition, subtraction, multiplication, division of the magnitude, cross and dot prodcuts and normalizaton.

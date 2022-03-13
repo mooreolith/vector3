@@ -3,6 +3,7 @@ name = "vector3"
 version = "1.1.0"
 edition = "2021"
 license = "MIT"
+description = "A library for dealing with 3D mathematical vectors"
 repository = "https://github.com/DigitalCyan/vector"
 keywords = ["maths", "vector"]
 categories = ["mathematics", "no-std"]
