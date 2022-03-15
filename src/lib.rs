@@ -1,5 +1,7 @@
 mod vector3;
 
+pub use vector3::Vector3;
+
 #[cfg(test)]
 mod tests {
     use std::f64::consts::PI;
