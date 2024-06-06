@@ -2,8 +2,9 @@ use std::{
     f64::consts::PI,
     ops::{Add, Div, Mul, Sub},
 };
+use serde::{Serialize, Deserialize};
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub struct Vector3 {
     pub x: f64,
     pub y: f64,
@@ -38,31 +39,6 @@ impl Vector3 {
             y: y.try_into().unwrap(),
             z: z.try_into().unwrap(),
         }
-    }
-
-    pub fn serialize(&self) -> String {
-        format!("x: {}, y: {}, z: {}", self.x, self.y, self.z)
-    }
-
-    pub fn deserialize(s: &str) -> Option<Self> {
-        let parts: Vec<&str> = s.split(", ").collect();
-        if parts.len() != 3 {
-            return None;
-        }
-
-        let x_part: Vec<&str> = parts[0].split(": ").collect();
-        let y_part: Vec<&str> = parts[1].split(": ").collect();
-        let z_part: Vec<&str> = parts[2].split(": ").collect();
-
-        if x_part.len() != 2 || y_part.len() != 2 || z_part.len() != 2 {
-            return None;
-        }
-
-        let x: f64 = x_part[1].parse().ok()?;
-        let y: f64 = y_part[1].parse().ok()?;
-        let z: f64 = z_part[1].parse().ok()?;
-
-        Some(Self { x, y, z })
     }
 }
 
