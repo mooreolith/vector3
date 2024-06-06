@@ -3,7 +3,9 @@ use std::{
     ops::{Add, Div, Mul, Sub},
 };
 use serde::{Serialize, Deserialize};
+use wasm_bindgen::prelude::*;
 
+#[wasm_bindgen]
 #[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub struct Vector3 {
     pub x: f64,
@@ -12,6 +14,7 @@ pub struct Vector3 {
 }
 
 #[allow(dead_code)]
+#[wasm_bindgen]
 impl Vector3 {
     pub fn new(x: f64, y: f64, z: f64) -> Vector3 {
         Vector3 { x, y, z }
@@ -39,6 +42,26 @@ impl Vector3 {
             y: y.try_into().unwrap(),
             z: z.try_into().unwrap(),
         }
+    }
+}
+
+impl From<JsValue> for Vector3 {
+    fn from(value: JsValue) -> Self {
+        let obj = js_sys::Object = value.into();
+        let x: f64 = Reflect::get(&obj, &"x".into()).unwrap().as_f64().unwrap();
+        let y: f64 = Reflect::get(&obj, &"y".into()).unwrap().as_f64().unwrap();
+        let z: f64 = Reflect::get(&obj, &"z".into()).unwrap().as_f64().unwrap();
+        Self {x, y, z}
+    }
+}
+
+impl Into<JsValue> for Vector3 {
+    fn into(self) -> JsValue {
+        let mut obj = js_sys::Object::new();
+        Reflect::set(&mut obj, &"x".into().unwrap();
+        Reflect::set(&mut obj, &"y".into().unwrap();
+        Reflect::set(&mut obj, &"z".into().unwrap();
+        obj.into()
     }
 }
 
