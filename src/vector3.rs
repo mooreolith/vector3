@@ -4,6 +4,7 @@ use std::{
 };
 use serde::{Serialize, Deserialize};
 use wasm_bindgen::prelude::*;
+use serde_wasm_bindgen::from_value;
 
 #[wasm_bindgen]
 #[derive(Debug, Clone, Copy, Serialize, Deserialize)]
@@ -47,21 +48,7 @@ impl Vector3 {
 
 impl From<JsValue> for Vector3 {
     fn from(value: JsValue) -> Self {
-        let obj = js_sys::Object = value.into();
-        let x: f64 = Reflect::get(&obj, &"x".into()).unwrap().as_f64().unwrap();
-        let y: f64 = Reflect::get(&obj, &"y".into()).unwrap().as_f64().unwrap();
-        let z: f64 = Reflect::get(&obj, &"z".into()).unwrap().as_f64().unwrap();
-        Self {x, y, z}
-    }
-}
-
-impl Into<JsValue> for Vector3 {
-    fn into(self) -> JsValue {
-        let mut obj = js_sys::Object::new();
-        Reflect::set(&mut obj, &"x".into().unwrap();
-        Reflect::set(&mut obj, &"y".into().unwrap();
-        Reflect::set(&mut obj, &"z".into().unwrap();
-        obj.into()
+        from_value(value).unwrap()
     }
 }
 
