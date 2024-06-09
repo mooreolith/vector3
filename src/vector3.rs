@@ -44,6 +44,14 @@ impl Vector3 {
             z: z.try_into().unwrap(),
         }
     }
+
+    pub fn from_f32(x: f32, y: f32, z: f32) -> Vector3 {
+        Vector3 {
+            x: x,
+            y: y,
+            z: z
+        }
+    }
 }
 
 impl From<JsValue> for Vector3 {
