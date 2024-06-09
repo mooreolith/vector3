@@ -47,9 +47,9 @@ impl Vector3 {
 
     pub fn from_f32(x: f32, y: f32, z: f32) -> Vector3 {
         Vector3 {
-            x: x,
-            y: y,
-            z: z
+            x: x.try_into().unwrap(),
+            y: y.try_into().unwrap(),
+            z: z.try_into().unwrap()
         }
     }
 }
