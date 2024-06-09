@@ -31,25 +31,25 @@ impl Vector3 {
 
     pub fn from_u32(x: u32, y: u32, z: u32) -> Vector3 {
         Vector3 {
-            x: x.try_into().unwrap(),
-            y: y.try_into().unwrap(),
-            z: z.try_into().unwrap(),
+            x: x as f32,
+            y: y as f32,
+            z: z as f32,
         }
     }
 
     pub fn from_i32(x: i32, y: i32, z: i32) -> Vector3 {
         Vector3 {
-            x: x.try_into().unwrap(),
-            y: y.try_into().unwrap(),
-            z: z.try_into().unwrap(),
+            x: x as f32,
+            y: y as f32,
+            z: z as f32,
         }
     }
 
     pub fn from_f32(x: f32, y: f32, z: f32) -> Vector3 {
         Vector3 {
-            x: x.try_into().unwrap(),
-            y: y.try_into().unwrap(),
-            z: z.try_into().unwrap()
+            x: x,
+            y: y,
+            z: z
         }
     }
 }
