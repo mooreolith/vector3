@@ -84,7 +84,7 @@ impl Sub for Vector3 {
     }
 }
 
-impl Mul<f32> for Vector3 {
+impl Mul<f64> for Vector3 {
     type Output = Vector3;
 
     fn mul(self, scalar: f64) -> Self::Output {
