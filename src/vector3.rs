@@ -1,5 +1,5 @@
 use std::{
-    f32::consts::PI,
+    f64::consts::PI,
     ops::{Add, Div, Mul, Sub},
 };
 use serde::{Serialize, Deserialize};
